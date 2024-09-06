@@ -123,7 +123,7 @@ const CreateRental = () => {
         <form className={`lg:w-9/12 2xl:8/12 xs:w-full border border-sky-300 rounded-md p-5 shadow-lg ${formTransition} transition duration-700 ease-out`} onSubmit={handleSubmitForm} noValidate>
           <p className="text-center mb-5 text-3xl font-bold text-sky-300">New Rentals</p>
           <div className="lg:flex xs:grid xs:grid-cols-1 justify-between pe-2">
-            <div className=" p-2 lg:w-1/2 flex flex-col gap-5 xs:order-2 lg:order-1">
+            <div className=" p-2 lg:w-full flex flex-col gap-5 xs:order-2 lg:order-1">
               <label className="w-full">
                 <span className="text-sky-800 font-semibold text-lg validation-sign after:text-red-500 after:ps-1 after:font-black">Address 1 :</span>
                 <input type="text" className="w-full p-2 shadow-md rounded bg-sky-300 text-sky-800 focus:outline-none need-validation" value={rentalFormData.address1} onChange={(e)=> setRentalFormData({...rentalFormData, address1: e.target.value})} required/>
@@ -150,8 +150,8 @@ const CreateRental = () => {
                 </label>
               </div>
             </div>
-            <div className="xs:order-1 lg:order-2 xs:flex items-center flex-col">
-              <div>
+            <div className="xs:order-1 lg:order-2 xs:flex items-center flex-col w-full">
+           
                 <label className="w-56 h-56 rounded-md border-4 border-dashed border-sky-300 flex items-center justify-center cursor-cell">
                   <div className="flex items-center justify-center rounded-full bg-sky-200 w-32 h-32 flex-col">
                     <i className="bi bi-file-earmark-arrow-up-fill text-4xl text-sky-300  "></i>
@@ -160,8 +160,8 @@ const CreateRental = () => {
                   <input type="file" className="need-validation" id='images' accept="image/png, image/jpeg" multiple hidden onChange={(e)=> setImages(e.target.files)} required/>
                 </label>
                 <p className="text-sky-800 font-semibold after:text-red-500 after:ps-1 after:font-black validation-sign">Selected files: {images.length}<span className="font-normal"></span></p>
-                <p className="text-sky-800 text-base"><span className="font-semibold ">Note:</span> <span className="text-xs">Please add 4 images, and rename your images from 1 to 4</span></p>
-              </div>
+                <p className="text-sky-800 text-base px-4 text-center"><span className="font-semibold ">Note:</span> <span className="text-xs">Please add 4 images, and rename your images from 1 to 4</span></p>
+           
             </div>
           </div> 
           <div className="flex lg:flex-row xs:flex-col justify-between w-full p-2 gap-5 mt-3">

@@ -55,12 +55,11 @@ export default class API {
       );
     });
 
-    images.sort(function (a, b) {
-      return a.charAt(a.length - 5) - b.charAt(b.length - 5);
-    });
-
     setTimeout(async () => {
       try {
+        images.sort(function (a, b) {
+          return a.charAt(a.length - 5) - b.charAt(b.length - 5);
+        });
         const rents = await Rentals.create({
           address1,
           address2,
@@ -165,11 +164,11 @@ export default class API {
           });
         }, 2500);
       });
-      images.sort(function (a, b) {
-        return a.charAt(a.length - 5) - b.charAt(b.length - 5);
-      });
 
       setTimeout(async () => {
+        images.sort(function (a, b) {
+          return a.charAt(a.length - 5) - b.charAt(b.length - 5);
+        });
         try {
           await findRental.updateOne({
             address1,

@@ -170,8 +170,7 @@ const UpdateRental = () => {
           </div>
         </div>
         <div className="xs:order-1 lg:order-2 flex items-center xs:justify-center xl:justify-end w-full ">
-          <div className="flex flex-col xs:items-center w-full lg:items-end">
-            <p className="text-sky-800 font-semibold after:text-red-500 after:ps-1 after:font-black lg:pe-[85px]" id="imagesLabel">Selected images: {images.length}<span className="font-normal"></span></p>
+          <div className="flex flex-col xs:items-center w-full">
             <label className="w-56 h-56 rounded-md border-4 border-dashed border-sky-300 flex items-center justify-center cursor-cell">
               <div className="flex items-center justify-center rounded-full bg-sky-200 w-32 h-32 flex-col">
                 <i className="bi bi-file-earmark-arrow-up-fill text-4xl text-sky-300  "></i>
@@ -179,7 +178,8 @@ const UpdateRental = () => {
               </div>
               <input type="file"  id='images'  accept="image/png, image/jpeg" multiple hidden onChange={(e)=> setImages(e.target.files)}/>
             </label>
-            <p className="text-sky-800 text-base xs:px-5 xs:text-center lg:text-end lg:px-0"><span className="font-semibold ">Note:</span> <span className="text-xs">Please add 4 images or do not add to save the old images. Then rename your images from 1 to 4.</span></p>
+            <p className="text-sky-800 font-semibold after:text-red-500 after:ps-1 after:font-black" id="imagesLabel">Selected images: <span className="font-normal">{images.length}</span></p>
+            <p className="text-sky-800 text-base xs:px-5 xs:text-center lg:px-10"><span className="font-semibold ">Note:</span> <span className="text-xs">Please add 4 images or do not add to save the old images. Then rename your images from 1 to 4.</span></p>
           </div>
         </div>
       </div> 
