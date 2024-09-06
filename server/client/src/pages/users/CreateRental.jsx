@@ -160,7 +160,7 @@ const CreateRental = () => {
                   <input type="file" className="need-validation" id='images' accept="image/png, image/jpeg" multiple hidden onChange={(e)=> setImages(e.target.files)} required/>
                 </label>
                 <p className="text-sky-800 font-semibold after:text-red-500 after:ps-1 after:font-black validation-sign">Selected files: {images.length}<span className="font-normal"></span></p>
-                <p className="text-sky-800 text-base"><span className="font-semibold ">Note:</span> <span className="text-xs">Please add 4 images</span></p>
+                <p className="text-sky-800 text-base"><span className="font-semibold ">Note:</span> <span className="text-xs">Please add 4 images, and rename your images from 1 to 4</span></p>
               </div>
             </div>
           </div> 

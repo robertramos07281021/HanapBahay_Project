@@ -23,6 +23,7 @@ export default class API {
     const user = await User.findById(req.user._id);
 
     const images = [];
+
     files.map(async (element) => {
       cloudinary.config({
         cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -52,6 +53,10 @@ export default class API {
           height: 500,
         }
       );
+    });
+
+    images.sort(function (a, b) {
+      return a.charAt(a.length - 5) - b.charAt(b.length - 5);
     });
 
     setTimeout(async () => {
@@ -160,6 +165,10 @@ export default class API {
           });
         }, 2500);
       });
+      images.sort(function (a, b) {
+        return a.charAt(a.length - 5) - b.charAt(b.length - 5);
+      });
+
       setTimeout(async () => {
         try {
           await findRental.updateOne({

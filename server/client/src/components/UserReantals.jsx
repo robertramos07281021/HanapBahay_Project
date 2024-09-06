@@ -122,11 +122,11 @@ const UserReantals = ({rent,index}) => {
         </div>
         {/* for images */}
         <div className=" bg-white/50 h-full backdrop-blur-[2px] rounded flex flex-col col-span-2 gap-2 p-2 ">
-          <img src={rent.images[3]} alt="" className=" h-[290px] w-full"/>
+          <img src={rent.images[0]} alt="" className=" h-[290px] w-full"/>
           <div className="w-full grid grid-cols-3  gap-2  ">
             <img src={rent.images[1]} alt="" className="h-24 w-full "/>
-            <img src={rent.images[0]} alt="" className="h-24 w-full " />
-            <img src={rent.images[2]} alt="" className="h-24 w-full"/>
+            <img src={rent.images[2]} alt="" className="h-24 w-full " />
+            <img src={rent.images[3]} alt="" className="h-24 w-full"/>
           </div>
           <div className="w-full mt-5 flex gap-2 ">
             <Link to="/update" className="w-full rounded border-2 py-2 bg-green-500 border-green-500 text-white font-bold text-lg hover:bg-green-100 hover:text-green-500 transition duration-300 ease-out flex justify-center" state={rent}>

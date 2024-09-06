@@ -179,7 +179,7 @@ const UpdateRental = () => {
               </div>
               <input type="file"  id='images'  accept="image/png, image/jpeg" multiple hidden onChange={(e)=> setImages(e.target.files)}/>
             </label>
-            <p className="text-sky-800 text-base xs:px-5 xs:text-center lg:text-end lg:px-0"><span className="font-semibold ">Note:</span> <span className="text-xs">Please add 4 images or do not add to save the old images.</span></p>
+            <p className="text-sky-800 text-base xs:px-5 xs:text-center lg:text-end lg:px-0"><span className="font-semibold ">Note:</span> <span className="text-xs">Please add 4 images or do not add to save the old images. Then rename your images from 1 to 4.</span></p>
           </div>
         </div>
       </div> 
