@@ -99,6 +99,7 @@ const CreateRental = () => {
         setUploading(true)
         const data = await addNewRentals(rentalFormData.address1, rentalFormData.address2, rentalFormData.region, rentalFormData.city, rentalFormData.classes, rentalFormData.price, rentalFormData.bedrooms, rentalFormData.bathrooms, rentalFormData.description, images)
         setPosts([...posts, data])
+
         setTimeout(()=> {
           navigate('/dashboard?successfulyadded=true')
         },200)
@@ -113,7 +114,7 @@ const CreateRental = () => {
 
 
   return (
-    <div className="flex items-center w-screen justify-center h-full xs:pt-24 lg:pt-32 pb-4">
+    <div className={`flex items-center w-screen justify-center h-full xs:pt-24 lg:pt-32 pb-4 ${uploading && 'overflow-hidden'}`}>
       {uploading ? (
           <div className="w-screen h-screen fixed top-0 left-0 bg-white z-50">
             <i className="bi bi-house-fill text-5xl absolute text-sky-500 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 after:animate-spin-slow after:absolute after:border-8 after:w-20 after:h-20 after:left-0 after:top-0 px-4 pt-3 after:rounded-full after:border-dotted after:border-sky-500"></i>
