@@ -10,7 +10,7 @@ const Rentals = ({rental, children}) => {
     <div className=" w-full lg:hover:shadow-xl lg:hover:shadow-sky-500 shadow-md rounded-md lg:hover:scale-[1.01] transition duration-300 ease-in-out overflow-hidden">
       <div className="h-[500px] flex flex-col rounded-md">
         <div className="border h-[380px] flex ">
-          <img src={rental.images[2]} alt="img" className="w-full h-[360px] rounded-t-md" />
+          <img src={rental.images[0]} alt="img" className="w-full h-[360px] rounded-t-md" />
         </div>
         <div className="bg-white rounded-b-2xl p-2 flex flex-col gap-4 h-36">
           <div>
