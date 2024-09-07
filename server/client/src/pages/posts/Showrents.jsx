@@ -85,7 +85,7 @@ const Showrents = () => {
   console.log(state)
   return (
     <>
-    <div className={`xs:w-full lg:w-6/12 flex flex-col md:h-screen lg:h-auto gap-5 mt-32 ${transition} duration-500 transition ease-in`}>
+    <div className={`xs:w-full lg:w-6/12 flex flex-col lg:h-auto gap-5 xs:mt-28 lg:mt-32 ${transition} duration-500 transition ease-in`}>
       <div className=" xs:h-80 md:h-2/4 lg:h-[500px] relative w-full overflow-hidden rounded-md shadow-md shadow-sky-500">
         <div className={`flex flex-wrap flex-col w-full h-full ${translateValue[translate]} transition duration-1000 ease-in-out` }>
             {
