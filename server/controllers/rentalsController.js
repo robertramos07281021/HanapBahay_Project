@@ -5,6 +5,22 @@ import mongoose from "mongoose";
 import Message from "../models/Message.js";
 import { v2 as cloudinary } from "cloudinary";
 
+function newName(originalname) {
+  let imageName = "";
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let counter = 0;
+  while (counter < 8) {
+    imageName += characters.charAt(
+      Math.floor(Math.random() * characters.length)
+    );
+    counter += 1;
+  }
+  imageName += "_";
+  imageName += originalname;
+  return imageName;
+}
+
 export default class API {
   //========================================================= Create New Rental
   static async createNewRental(req, res) {
@@ -31,28 +47,25 @@ export default class API {
         api_secret: process.env.API_SECRET,
       });
       const uploadResult = await cloudinary.uploader.upload(element.path, {
-        public_id: element.originalname.slice(
-          0,
-          element.originalname.indexOf(".")
+        public_id: newName(
+          element.originalname.slice(
+            element.originalname.indexOf(".") - 1,
+            element.originalname.indexOf(".")
+          )
         ),
       });
+
       images.push(uploadResult.secure_url);
-      const optimizeUrl = cloudinary.url(
-        element.originalname.slice(0, element.originalname.indexOf(".")),
-        {
-          fetch_format: "auto",
-          quality: "auto",
-        }
-      );
-      const autoCropUrl = cloudinary.url(
-        element.originalname.slice(0, element.originalname.indexOf(".")),
-        {
-          crop: "auto",
-          gravity: "auto",
-          width: 500,
-          height: 500,
-        }
-      );
+      const optimizeUrl = cloudinary.url(uploadResult.public_id, {
+        fetch_format: "auto",
+        quality: "auto",
+      });
+      const autoCropUrl = cloudinary.url(uploadResult.public_id, {
+        crop: "auto",
+        gravity: "auto",
+        width: 500,
+        height: 500,
+      });
     });
 
     setTimeout(async () => {
@@ -127,28 +140,24 @@ export default class API {
           api_secret: process.env.API_SECRET,
         });
         const uploadResult = await cloudinary.uploader.upload(element.path, {
-          public_id: element.originalname.slice(
-            0,
-            element.originalname.indexOf(".")
+          public_id: newName(
+            element.originalname.slice(
+              element.originalname.indexOf(".") - 1,
+              element.originalname.indexOf(".")
+            )
           ),
         });
         images.push(uploadResult.secure_url);
-        const optimizeUrl = cloudinary.url(
-          element.originalname.slice(0, element.originalname.indexOf(".")),
-          {
-            fetch_format: "auto",
-            quality: "auto",
-          }
-        );
-        const autoCropUrl = cloudinary.url(
-          element.originalname.slice(0, element.originalname.indexOf(".")),
-          {
-            crop: "auto",
-            gravity: "auto",
-            width: 500,
-            height: 500,
-          }
-        );
+        const optimizeUrl = cloudinary.url(uploadResult.public_id, {
+          fetch_format: "auto",
+          quality: "auto",
+        });
+        const autoCropUrl = cloudinary.url(uploadResult.public_id, {
+          crop: "auto",
+          gravity: "auto",
+          width: 500,
+          height: 500,
+        });
 
         setTimeout(async () => {
           findRental.images.forEach(async (element) => {
