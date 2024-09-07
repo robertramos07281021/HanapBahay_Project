@@ -44,10 +44,6 @@ const Showrents = () => {
       setInquiry("opacity-100 flex translate-y-24")
     },20)
   }
-
-
-
-
   const [transitionModal, setTransitionModal] = useState("-translate-y-2/3 opacity-0")
 
   function toggleThankyou(){
@@ -81,12 +77,10 @@ const Showrents = () => {
       setInquiryButton(false)
     }
   })
-
-  console.log(state)
   return (
     <>
-    <div className={`xs:w-full lg:w-6/12 flex flex-col lg:h-auto gap-5 xs:mt-28 lg:mt-32 ${transition} duration-500 transition ease-in`}>
-      <div className=" xs:h-80 md:h-2/4 lg:h-[500px] relative w-full overflow-hidden rounded-md shadow-md shadow-sky-500">
+    <div className={`xs:w-full lg:w-6/12 flex flex-col md:mb-0 md:h-full lg:mb-0 lg:h-auto gap-5 xs:mt-20 lg:mt-32 ${transition} duration-500 transition ease-in`}>
+      <div className=" xs:h-80 md:h-[500px] lg:h-[500px] relative w-full overflow-hidden rounded-md shadow-md shadow-sky-500">
         <div className={`flex flex-wrap flex-col w-full h-full ${translateValue[translate]} transition duration-1000 ease-in-out` }>
             {
               state.images.map((image,index)=> <img key={index} src={image} className="w-full h-full" alt={`Images ${index +1}`}/>)
@@ -110,7 +104,7 @@ const Showrents = () => {
             <p className="text-right text-xl">{state.classes.toUpperCase()}</p>
           </div>
         </div>
-        <div className="p-2 xs:text-sm md:text-base ">
+        <div className="p-2 xs:text-sm md:text-2xl ">
           <p className="w-1/6 flex justify-between font-normal">Bedrooms: <span className="font-semibold">{state.bedrooms}</span></p> 
           <p className="w-1/6 flex justify-between font-normal">Bathrooms: <span className="font-semibold">{state.bathrooms}</span></p> 
         </div>
