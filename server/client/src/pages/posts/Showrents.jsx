@@ -110,14 +110,14 @@ const Showrents = () => {
             <p className="text-right text-xl">{state.classes.toUpperCase()}</p>
           </div>
         </div>
-        <div className="p-2 ">
+        <div className="p-2 xs:text-sm md:text-base ">
           <p className="w-1/6 flex justify-between font-normal">Bedrooms: <span className="font-semibold">{state.bedrooms}</span></p> 
           <p className="w-1/6 flex justify-between font-normal">Bathrooms: <span className="font-semibold">{state.bathrooms}</span></p> 
         </div>
 
         <div className="p-2">
-          <p className="xs:text-lg md:text-xl font-semibold">Other Description:</p> 
-          <p className="indent-5 text-justify xs:text-base md:text-lg">{state.description}</p>
+          <p className="xs:text-base md:text-xl font-semibold">Other Description:</p> 
+          <p className="indent-5 text-justify xs:text-sm md:text-lg">{state.description}</p>
         </div>
           {inquiryButton &&
         <div className="flex justify-center">
