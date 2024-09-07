@@ -48,10 +48,7 @@ export default class API {
       });
       const uploadResult = await cloudinary.uploader.upload(element.path, {
         public_id: newName(
-          element.originalname.slice(
-            element.originalname.indexOf(".") - 1,
-            element.originalname.indexOf(".")
-          )
+          element.originalname.slice(0, element.originalname.indexOf("."))
         ),
       });
 
@@ -141,10 +138,7 @@ export default class API {
         });
         const uploadResult = await cloudinary.uploader.upload(element.path, {
           public_id: newName(
-            element.originalname.slice(
-              element.originalname.indexOf(".") - 1,
-              element.originalname.indexOf(".")
-            )
+            element.originalname.slice(0, element.originalname.indexOf("."))
           ),
         });
         images.push(uploadResult.secure_url);
