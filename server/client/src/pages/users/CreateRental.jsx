@@ -127,11 +127,11 @@ const CreateRental = () => {
             <div className=" p-2 lg:w-full flex flex-col gap-5 xs:order-2 lg:order-1">
               <label className="w-full">
                 <span className="text-sky-800 font-semibold text-lg validation-sign after:text-red-500 after:ps-1 after:font-black">Address 1 :</span>
-                <input type="text" className="w-full p-2 shadow-md rounded bg-sky-300 text-sky-800 focus:outline-none need-validation" value={rentalFormData.address1} onChange={(e)=> setRentalFormData({...rentalFormData, address1: e.target.value})} required/>
+                <input type="text" className="w-full p-2 shadow-md rounded bg-sky-300 text-sky-800 focus:outline-none need-validation" maxLength={30} value={rentalFormData.address1} onChange={(e)=> setRentalFormData({...rentalFormData, address1: e.target.value})} required/>
               </label>
               <label className="w-full">
                 <span className="text-sky-800 font-semibold text-lg  validation-sign after:text-red-500 after:ps-1 after:font-black">Address 2 :</span>
-                <input type="text" className="w-full p-2 shadow-md rounded bg-sky-300 text-sky-800 focus:outline-none need-validation" value={rentalFormData.address2} onChange={(e)=> setRentalFormData({...rentalFormData, address2: e.target.value})} required/>
+                <input type="text" className="w-full p-2 shadow-md rounded bg-sky-300 text-sky-800 focus:outline-none need-validation" maxLength={30} value={rentalFormData.address2} onChange={(e)=> setRentalFormData({...rentalFormData, address2: e.target.value})} required/>
               </label>
               <div className="flex xs:flex-col md:flex-row lg:flex-row gap-5">
                 <label className="w-full">

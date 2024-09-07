@@ -11,8 +11,8 @@ const UserSchemaValidation = Joi.object({
 });
 
 const RentalSchemaValidation = Joi.object({
-  address1: Joi.string().required(),
-  address2: Joi.string().required(),
+  address1: Joi.string().required().max(30),
+  address2: Joi.string().required().max(30),
   region: Joi.string().required(),
   city: Joi.string().required(),
   classes: Joi.string().valid("room", "house", "apartment").required(),

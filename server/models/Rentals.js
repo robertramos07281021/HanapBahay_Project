@@ -4,10 +4,12 @@ const RentalsSchema = new mongoose.Schema({
   address1: {
     type: String,
     required: true,
+    max: 30,
   },
   address2: {
     type: String,
     required: true,
+    max: 30,
   },
   city: {
     type: String,

@@ -4,15 +4,15 @@
 import { Link } from "react-router-dom"
 
 
-const Rentals = ({rental, children}) => {
+const Rentals = ({rental}) => {
 
   return (
     <div className=" w-full lg:hover:shadow-xl lg:hover:shadow-sky-500 shadow-md rounded-md lg:hover:scale-[1.01] transition duration-300 ease-in-out overflow-hidden">
-      <div className="h-[500px] flex flex-col rounded-md">
+      <div className=" flex h-[550px] flex-col rounded-md">
         <div className="border h-[380px] flex ">
-          <img src={rental.images[0]} alt="img" className="w-full h-[360px] rounded-t-md" />
+          <img src={rental.images[0]} alt="img" className="w-full h-[380px] rounded-t-md" />
         </div>
-        <div className="bg-white rounded-b-2xl p-2 flex flex-col gap-4 h-36">
+        <div className="bg-white rounded-b-2xl p-2 flex flex-col gap-4 h-full">
           <div>
             <p className="types">{rental.classes.toUpperCase()}</p>
             <div className="flex justify-between">
@@ -20,8 +20,8 @@ const Rentals = ({rental, children}) => {
             <p>Bedrooms: <span className="bedrooms">{rental.bedrooms}</span></p>
             </div>
           </div>
-          <div className="flex justify-between">
-            <div>
+          <div className="flex justify-between h-full">
+            <div className="h-full xs:text-xs md:text-base">
               <p>{rental.address1} {rental.address2}</p>
               <p className="city">{rental.city}, {rental.region}</p>
             </div>
