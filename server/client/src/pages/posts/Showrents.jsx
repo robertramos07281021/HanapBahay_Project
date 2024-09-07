@@ -102,11 +102,11 @@ const Showrents = () => {
         
         <div className="flex justify-between">
           <div>
-            <p className="xs:text-xs md:text-2xl">{state.address1} {state.address2}</p>
-            <p className="xs:text-[0.6rem] md:text-lg">{state.city}, {state.region}</p>
+            <p className="xs:text-sm md:text-2xl">{state.address1} {state.address2}</p>
+            <p className="xs:text-xs md:text-lg">{state.city}, {state.region}</p>
           </div>
           <div className="text-end">
-            <p className="text-2xl">P {state.price} <span className="text-base">/month</span></p>
+            <p className="xs:text-sm md:text-2xl">P {state.price} <span className="xs:text-sm md:text-base">/month</span></p>
             <p className="text-right text-xl">{state.classes.toUpperCase()}</p>
           </div>
         </div>
@@ -116,8 +116,8 @@ const Showrents = () => {
         </div>
 
         <div className="p-2">
-          <p className="text-xl font-semibold">Other Description:</p> 
-          <p className="indent-5 text-justify">{state.description}</p>
+          <p className="xs:text-lg md:text-xl font-semibold">Other Description:</p> 
+          <p className="indent-5 text-justify xs:text-base md:text-lg">{state.description}</p>
         </div>
           {inquiryButton &&
         <div className="flex justify-center">
