@@ -102,8 +102,8 @@ const Showrents = () => {
         
         <div className="flex justify-between">
           <div>
-            <p className="text-2xl">{state.address1} {state.address2}</p>
-            <p className="text-lg">{state.city}, {state.region}</p>
+            <p className="xs:text-xs md:text-2xl">{state.address1} {state.address2}</p>
+            <p className="xs:text-[0.6rem] md:text-lg">{state.city}, {state.region}</p>
           </div>
           <div className="text-end">
             <p className="text-2xl">P {state.price} <span className="text-base">/month</span></p>
