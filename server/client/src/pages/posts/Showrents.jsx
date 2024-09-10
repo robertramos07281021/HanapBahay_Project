@@ -81,7 +81,7 @@ const Showrents = () => {
     <>
     <div className={`xs:w-auto lg:w-6/12 flex flex-col md:mb-0 md:h-full lg:mb-0 lg:h-auto gap-5 xs:mt-20 lg:mt-32 ${transition} duration-500 transition ease-in`}>
       <div className=" xs:h-full md:h-[500px] lg:h-[500px] relative w-full overflow-hidden rounded-md shadow-md shadow-sky-500">
-        <div className={`flex flex-wrap flex-col w-full h-full ${translateValue[translate]} transition duration-1000 ease-in-out` }>
+        <div className={`flex flex-wrap flex-col w-full h-[300px] ${translateValue[translate]} transition duration-1000 ease-in-out` }>
             {
               state.images.map((image,index)=> <img key={index} src={image} className="w-full h-full" alt={`Images ${index +1}`}/>)
             }
