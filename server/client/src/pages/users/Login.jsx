@@ -20,7 +20,7 @@ const Login = () => {
   }
 
   const [error, setError] = useState(false)
-  const [alreadyLoggedIn, setAlreadyLoggedIn] = useState(false)
+  const [alreadyLoggedIn, setAlreadyLoggedIn] = useState(true)
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -67,7 +67,7 @@ const Login = () => {
         <NotificationModal bg="bg-red-500" query={alreadyLoggedIn} >
           This Account Is already loggin!.
         </NotificationModal>
-      }
+      } 
       <form className={`absolute bottom-1/2 left-1/2 -translate-x-1/2 ${transition} border min-h-4/6 xs:w-full md:w-96 lg:w-3/12 bg-sky-500 p-10 flex flex-col items-center justify-center rounded-xl gap-5 shadow-xl duration-700 transition ease-in`} onSubmit={handleLogin} noValidate>
         <h1 className="text-white font-bold text-3xl">Log In</h1>
 

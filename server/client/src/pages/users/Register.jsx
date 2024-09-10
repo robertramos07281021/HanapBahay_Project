@@ -43,7 +43,7 @@ const Register = () => {
   const [passwordValid, setPasswordValid] = useState("invisible")
   const [confirmPasswordValid, setConfirmPasswordValid] = useState("invisible")
   const [emailValid, setEmailValid] = useState('invisible')
-  const [error, setError] = useState(null)
+  const [error, setError] = useState("")
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -67,9 +67,8 @@ const Register = () => {
         setUser({email: email, rentals: []})
         navigate("/dashboard")
       } catch (error) {
-        setError(error)
+        setError(error.message)
       }
-      console.log(error)
       setConfirmPasswordValid("invisible")
       setPasswordValid("invisible")
     }
@@ -81,13 +80,15 @@ const Register = () => {
     }
   }
 
-
   return (
-    <form className={`xs:w-full md:w-4/6 lg:w-3/6 xl:w-2/6 h-[500px] absolute bottom-1/2 left-1/2 -translate-x-1/2 ${transition} flex items-center justify-center border duration-500 transition ease-in bg-sky-500 rounded-xl flex-col xs:p-3 md:p-5 lg:p-10 gap-5 shadow-lg`} noValidate onSubmit={handleSubmit}>
+    <form className={`xs:w-full md:w-4/6 lg:w-3/6  xl:w-2/6 h-[500px] absolute bottom-1/2 left-1/2 -translate-x-1/2 ${transition} flex items-center justify-center border duration-500 transition ease-in bg-sky-500 rounded-xl flex-col xs:p-3 md:p-5 lg:p-10 gap-5 shadow-lg`} noValidate onSubmit={handleSubmit}>
       <h1 className="text-white font-bold text-3xl">Registration</h1>
       <div className="w-full flex flex-col gap-1">
         <label className="w-full relative">
           <span className="xs:text-xl lg:text-2xl font-semibold text-white drop-shadow-2xl">Email </span>
+          {error === "Email is already exists." && 
+            <span className="text-xs text-red-500 font-black">*{error}</span>
+          }  
           <input type="email" className="w-full p-2 rounded-md shadow-md focus:ring-0 " pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" onChange={(e)=> setEmail(e.target.value)} required />
           <p className={`text-xs h-4 text-red-500 font-semibold ${emailValid} bg-white/50 mt-1 `}>Email address is invalid</p>
         </label>
