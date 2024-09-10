@@ -78,10 +78,10 @@ const Showrents = () => {
     }
   })
   return (
-    <>
-    <div className={`xs:w-auto lg:w-6/12 flex flex-col md:mb-0 md:h-full lg:mb-0 lg:h-auto gap-5 xs:mt-20 lg:mt-32 ${transition} duration-500 transition ease-in`}>
-      <div className=" xs:h-full md:h-[500px] lg:h-[500px] relative w-full overflow-hidden rounded-md shadow-md shadow-sky-500">
-        <div className={`flex flex-wrap flex-col w-full h-[300px] ${translateValue[translate]} transition duration-1000 ease-in-out` }>
+    <div className="xs:h-full lg:h-auto flex justify-center xs:pt-20 lg:pt-32">
+    <div className={`xs:w-auto lg:w-6/12 flex flex-col md:mb-0 xs:h-[600px] md:h-[950px] lg:h-[1000px]  lg:mb-0  gap-5 ${transition} duration-500 transition ease-in`}>
+      <div className=" xs:h-full md:h-full relative  lg:w-full border border-black overflow-hidden rounded-md shadow-md shadow-sky-500">
+        <div className={`flex flex-wrap flex-col w-full h-full ${translateValue[translate]} transition duration-1000 ease-in-out` }>
             {
               state.images.map((image,index)=> <img key={index} src={image} className="w-full h-full" alt={`Images ${index +1}`}/>)
             }
@@ -122,7 +122,7 @@ const Showrents = () => {
       </div>
     { inquiryToggle && <InquiryModal handleToggle={closeModal} transition={inquiry} rents={state} thankModal={toggleThankyou}/> }
     { thankYou && <ThankYouModal transition={transitionModal} thanksToggle={toggleThankyou}/> } 
-    </>
+    </div>
   )
 }
 
