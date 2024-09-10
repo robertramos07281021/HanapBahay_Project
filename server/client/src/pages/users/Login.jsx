@@ -20,7 +20,7 @@ const Login = () => {
   }
 
   const [error, setError] = useState(false)
-  const [alreadyLoggedIn, setAlreadyLoggedIn] = useState(true)
+  const [alreadyLoggedIn, setAlreadyLoggedIn] = useState(false)
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
